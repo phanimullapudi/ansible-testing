@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  vars:
+    code_name: whiskey
+    version: "Glenlivet 18"
+  tasks:
+    - name: deploy config file using template and variables
+      template:
+        src: config.j2
+        dest: /opt/config

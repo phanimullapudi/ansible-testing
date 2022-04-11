@@ -1,0 +1,21 @@
+---
+- hosts: centos
+  become: yes
+  vars_files:
+    - vars2.yaml
+  tasks:
+    - name: install software
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - elinks
+        - nmap-ncat
+        - bind-utils
+        - iotop
+        - iptraf
+    - name: Check and Start service
+      service:
+         name: "{{ item }}"
+         state: started
+      loop: "{{ service_list }}"

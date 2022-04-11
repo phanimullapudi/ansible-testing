@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Download the file
+      get_url:
+        url: https://drive.google.com/file/d/1--ZS8-naIQiTOo5ImR92momYVpbtLScc/view?usp=sharing
+        dest: /tmp

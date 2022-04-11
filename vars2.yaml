@@ -1,0 +1,10 @@
+service_list:
+- nfs
+- httpd
+- mariadb
+- network
+
+share_paths:
+  nfs: /mnt/nfs
+  cifs: /mnt/cifs
+  iscsi: /mnt/iscsi
